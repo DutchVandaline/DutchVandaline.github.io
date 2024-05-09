@@ -1,1 +1,53 @@
+---
+layout: single
+title:  "iOS Release"
+---
+<br>
+
+![image](https://github.com/DutchVandaline/DutchVandaline.github.io/assets/142364450/4e24f637-870c-4d4c-9fc3-309739f66bd7)
+<br>
+
+ The White House urged to stop writing code in C/C++. Due to Garbage Collection, they found a servere safety issue.
+I always admired 1990s ~ 2000s developers. Of course, I wasn't alive back then but I have some sort of Nostalgia and admiration on 1990s to 2000s developers. 
+For all my respect, I decided to make a fps game using C and OpenGL.
+
+### Disclaimer
+ This code is written only in C. I used OpenGL to implement the 3D drawing in C.
+Shout out to '3D Sage' who gave me an inspiration and way to make a game.
+
+### Code Breakdown
+ I am going to breakdown the code from now on. This is for my study and also those who want to make Raycaster in C.
+#### main.c
+```c
+#include <stdlib.h>
+#include <glut.h>
+#include <math.h>
+#include "sprites.h"
+
+#define PI 3.1415926535
+
+float degToRad(float a) { return a * PI / 180.0; }
+float FixAng(float a) { if (a > 359) { a -= 360; } if (a < 0) { a += 360; } return a; }
+float distance(ax, ay, bx, by, ang) { return cos(degToRad(ang)) * (bx - ax) - sin(degToRad(ang)) * (by - ay); }
+float px, py, pdx, pdy, pa;
+float frame1, frame2, fps;
+
+int currentFrame = 0;
+float frameDuration = 200; // Duration each frame is displayed in milliseconds
+float lastFrameSwitch = 0;
+
+typedef struct
+{
+    int w, a, d, s;                     
+}ButtonKeys; ButtonKeys Keys;
+
+```
+**degToRad** is a method from "math.h".<br>
+**FixAng** part checks if the angle is between 0 to 360. If angle a is over 359 or 0, it corrects it by adding or subtracting 360.<br>
+**distance** function calculates the vector and direction. The result is scalar. If result is positive, then it means ang is in the same direction.<br>
+**px, py** is player position.<br>
+**ButtonKeys** is for controlling keys. It's written in struct.<br>
+
+
+
 
