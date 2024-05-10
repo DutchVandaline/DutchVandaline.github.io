@@ -21,10 +21,10 @@ As Apple App Developer, Actually as a hybrid platform app developer using Flutte
  
 ### Actual Deployment
  After cleaning and building with ios, find directory named **Runner.xcworkspace**. It is the crucial part of running your app inside XCode. Right click on that directory and find **Flutter > Open iOS/macOS module in XCode**. It may open with XCode app.<br>
- If you turn your app inside XCode, it start processing file. You need to wait for that process is finished. If it's over check the following instructions. <br>
- **XCode > Product > Destination > Any iOS Device** <br>
- **XCode > Product > Scheme > choose scheme > Runnner** <br>
- **XCode > Product > Archive** <br>
+ If you turn your app inside XCode, it start processing file. You need to wait for that process is finished. If it's over check the following instructions. <br><br>
+ `XCode > Product > Destination > Any iOS Device` <br>
+ `XCode > Product > Scheme > choose scheme > Runnner` <br>
+ `XCode > Product > Archive` <br><br>
 
  Also, check **signing & capabilites** and make it to *signed*.
 
