@@ -8,6 +8,7 @@ title:  "Java Data Structure #1"
 
 # What I've Learned
 **First**, *Floyd's Tortoise and Hare algorithm*. Astonishing Idea, Using two Pointers, one is *slow* and other is *fast*. To find middle, I use *slow* move by 1 and *fast* move by 2. When *fast* reaches, *slow* is pointing the middle.
+**Second**, in *Floyd's Tortoise and Hare algorithm*, while loop condition is important. I need to use `while(fast != null && fast.next != null)`. 
 
 
 ## Disclaimer
@@ -49,5 +50,24 @@ But here's an astonishing Idea. Moving two pointers in different rate can easily
           fast = fast.next.next;
       }
       return late;
+	}
+```
+
+# LL: Has Loop
+
+## Solution
+This was the idea about finding loop in a linkedlist. *Floyd's Tortoise and Hare algorithm* is astonishing. `Node slow` is moving by one and `Node fast` is moving by two. It will eventually meet when there is a loop. What I missed was `while` loop's condition. I wasn't able to come up with `(fast != null && fast.next != null)`. 
+
+```java
+public boolean hasLoop(){
+	    Node slow = head;
+	    Node fast = head;
+	    
+	    while(fast != null && fast.next != null){
+	        slow = slow.next;
+	        fast = fast.next.next;
+	        if(slow == fast) return true;
+	    }
+	    return false;
 	}
 ```
