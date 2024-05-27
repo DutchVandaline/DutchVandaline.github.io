@@ -10,7 +10,7 @@ title:  "Java Data Structure #1"
 **First**, Astonishing Idea, Using two Pointers, one is *slow* and other is *fast*. To find middle, I use *slow* move by 1 and *fast* move by 2. When *fast* reaches, *slow* is pointing the middle.
 
 
-### Disclaimer
+## Disclaimer
  For LeetCode, I started learning about data structures on Udemy. I've been studying with lecture named *Java Data Structures & Algorithms + LEETCODE Exercises*. 
 
 # LL: Find Middle Node
