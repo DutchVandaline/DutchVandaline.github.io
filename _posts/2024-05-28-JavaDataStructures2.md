@@ -17,17 +17,21 @@ title:  "Java Data Structure #2"
 # LL: Find Kth Node From End
 
 ## Solution
-I was able to come up with the idea using *Floyd's Tortoise and Hare algorithm*. 
+I was able to come up with the idea using *Floyd's Tortoise and Hare algorithm*. To find the Kth from the end, I first used two nodes `slow` and `fast`. By starting, gap is set of `k` by `for` loop. But what I missed was, the order of if statement. `if(fast == null) return null;` need to come first thatn `fast = fast.next;`. 
 
 ```java
-	public Node findMiddleNode(){
-	    Node late = head;
-      Node fast = head;
-
-      while(fast.next != null && fast != null){
-          late = late.next;
-          fast = fast.next.next;
-      }
-      return late;
-	}
+	public Node findKthFromEnd(int k){
+        Node fast = head;
+        Node slow = head;
+        for(int i =0; i<k; i++){
+            if(fast == null) return null;
+            fast = fast.next;
+        }
+        
+        while(fast != null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
 ```
