@@ -7,7 +7,7 @@ title:  "Java Data Structure #4"
 ![image](https://github.com/DutchVandaline/DutchVandaline.github.io/assets/142364450/b75c9826-3f3f-44ba-9d85-dc8eb7d3aba1)
 
 # What I've Learned
-**First**, think simple. Algorithms are not that complicated to make. <br>
+**First**, I can simply multiply by 2 when turning decimal to integer. <br>
 
 ## Disclaimer
  For LeetCode, I started learning about data structures on Udemy. I've been studying with lecture named *Java Data Structures & Algorithms + LEETCODE Exercises*. 
@@ -35,5 +35,43 @@ title:  "Java Data Structure #4"
             temp = temp.next;
         }
         
+    }
+```
+
+# LL: Binary to Decimal
+
+## My Solution
+
+I've solved this problem. Using `while` loop. The idea of multipling 2 before moving to the next pointer was a good idea. I need to remember that algorithm for other time
+
+```java
+   public int binaryToDecimal(){
+        int num = 0;
+        Node temp = head;
+        
+        while(temp != null){
+            num += temp.value;
+            if(temp.next == null)
+                break;
+            num *= 2;
+            temp = temp.next;
+        }
+        return num;
+    }
+```
+
+## Solution
+
+There was a simpler answer. Without using `break`, I can just multiply 2 and add the value in one line.
+
+```java
+     public int binaryToDecimal() {
+        int num = 0;
+        Node current = head;
+        while (current != null) {
+            num = num * 2 + current.value;
+            current = current.next;
+        }
+        return num;
     }
 ```
