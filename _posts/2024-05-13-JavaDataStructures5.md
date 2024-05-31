@@ -7,7 +7,8 @@ title:  "Java Data Structure 5"
 ![image](https://github.com/DutchVandaline/DutchVandaline.github.io/assets/142364450/b75c9826-3f3f-44ba-9d85-dc8eb7d3aba1)
 
 # What I've Learned
-**First**, I lack the skill of making code simpler.
+**First**, I lack the skill of making code simpler. <br>
+**Second**, I also reviewed finding middle of the linked list. Using floyd's algorithm.
 
 ## Disclaimer
  For LeetCode, I started learning about data structures on Udemy. I've been studying with lecture named *Java Data Structures & Algorithms + LEETCODE Exercises*. 
@@ -40,3 +41,4 @@ title:  "Java Data Structure 5"
         head = dummyNode.next;
     }
 ```
+
