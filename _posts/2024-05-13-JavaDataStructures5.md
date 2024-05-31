@@ -9,6 +9,7 @@ title:  "Java Data Structure 5"
 # What I've Learned
 **First**, I lack the skill of making code simpler. <br>
 **Second**, I also reviewed finding middle of the linked list. Using floyd's algorithm.
+**Third**, Find the key when moving.
 
 ## Disclaimer
  For LeetCode, I started learning about data structures on Udemy. I've been studying with lecture named *Java Data Structures & Algorithms + LEETCODE Exercises*. 
@@ -42,3 +43,33 @@ title:  "Java Data Structure 5"
     }
 ```
 
+# LL: Partition List Review
+
+## Solution
+
+ I've reviewed the *Partition List*. I was wrong of using `Node prev1` and `Node prev2`. I just moved with `dummy1` and `dummy2` directly. Also, `temp` need to move because of `if` statement. The criteria of moving needs to be `temp`. 
+
+```java
+     public void partitionList(int x){
+        Node dummy1 = new Node(0);
+        Node dummy2 = new Node(0);
+        Node prev1 = dummy1;
+        Node prev2 = dummy2;
+        Node temp = head;
+        
+        while(temp != null){
+            if(temp.value < x){
+                prev1.next = temp;
+                prev1 = temp;
+            }
+            else{
+                prev2.next = temp;
+                prev2 = temp;
+            }
+            temp = temp.next;
+        }
+        prev2.next = null;
+        prev1.next = dummy2.next;
+        head = dummy1.next;
+    }
+```
