@@ -9,7 +9,7 @@ title:  "Java Data Structure #6"
 # What I've Learned
 **First**, I can use two `if` statements handling the edge cases.
 **Second**, don't forget `length++` in prepend. Also, use `head = newNode`.
-**Third**, in DLL get, cut in half and find the index.
+**Third**, in DLL get, cut in half and find the index. It's more efficient than SLL.
 
 ## Disclaimer
  For LeetCode, I started learning about data structures on Udemy. I've been studying with lecture named *Java Data Structures & Algorithms + LEETCODE Exercises*. 
@@ -42,7 +42,7 @@ title:  "Java Data Structure #6"
 
 ## My Solution
 
-DLL get is little bit different from SLL get. Due to SLL has only one pointer which is `.next`, it needs to move by one side. On the other hand, DLL has two pointers pointing both ways, `.next` and `.prev`, I can cut in half and search. 
+DLL get is little bit different from SLL get. Due to SLL has only one pointer which is `.next`, it needs to move by one side. On the other hand, DLL has two pointers pointing both ways, `.next` and `.prev`, I can cut in half and search. Also, `set` method in DLL will be same as `set` method in SLL, but it will be more efficient.
 
 ```java
    public Node get(int index){
