@@ -7,10 +7,10 @@ title:  "Java Data Structure #6"
 ![image](https://github.com/DutchVandaline/DutchVandaline.github.io/assets/142364450/b75c9826-3f3f-44ba-9d85-dc8eb7d3aba1)
 
 # What I've Learned
-**First**, I can use two `if` statements handling the edge cases.
-**Second**, don't forget `length++` in prepend. Also, use `head = newNode`.
-**Third**, in DLL get, cut in half and find the index. It's more efficient than SLL.
-**Fourth**, remove can be done by using `temp.next.prev = temp.prev` and `temp.prev.next = temp.next`. Not using two different pointers.
+**First**, I can use two `if` statements handling the edge cases.<br>
+**Second**, don't forget `length++` in prepend. Also, use `head = newNode`.<br>
+**Third**, in DLL get, cut in half and find the index. It's more efficient than SLL.<br>
+**Fourth**, remove can be done by using `temp.next.prev = temp.prev` and `temp.prev.next = temp.next`. Not using two different pointers.<br>
 
 ## Disclaimer
  For LeetCode, I started learning about data structures on Udemy. I've been studying with lecture named *Java Data Structures & Algorithms + LEETCODE Exercises*. 
