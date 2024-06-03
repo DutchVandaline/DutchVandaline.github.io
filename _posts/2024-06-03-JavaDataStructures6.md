@@ -9,6 +9,7 @@ title:  "Java Data Structure #6"
 # What I've Learned
 **First**, I can use two `if` statements handling the edge cases.
 **Second**, don't forget `length++` in prepend. Also, use `head = newNode`.
+**Third**, in DLL get, cut in half and find the index.
 
 ## Disclaimer
  For LeetCode, I started learning about data structures on Udemy. I've been studying with lecture named *Java Data Structures & Algorithms + LEETCODE Exercises*. 
@@ -37,40 +38,27 @@ title:  "Java Data Structure #6"
 	}
 ```
 
-# LL: Binary to Decimal
+# DLL: Get
 
 ## My Solution
 
-I've solved this problem. Using `while` loop. The idea of multipling 2 before moving to the next pointer was a good idea. I need to remember that algorithm for other time
+DLL get is little bit different from SLL get. Due to SLL has only one pointer which is `.next`, it needs to move by one side. On the other hand, DLL has two pointers pointing both ways, `.next` and `.prev`, I can cut in half and search. 
 
 ```java
-   public int binaryToDecimal(){
-        int num = 0;
-        Node temp = head;
-        
-        while(temp != null){
-            num += temp.value;
-            if(temp.next == null)
-                break;
-            num *= 2;
-            temp = temp.next;
-        }
-        return num;
-    }
+   public Node get(int index){
+	    Node temp = head;
+	    if(index < 0 || index >= length) return null;
+	    if(index < length/2){
+	        for(int i =0; i < index; i++){
+	            temp = temp.next;
+	        }
+	    } else{
+	        temp = tail;
+	        for(int i = length-1; i>index;i--){
+	            temp = temp.prev;
+	        }
+	    }
+	    return temp;
+	}
 ```
 
-## Solution
-
-There was a simpler answer. Without using `break`, I can just multiply 2 and add the value in one line.
-
-```java
-     public int binaryToDecimal() {
-        int num = 0;
-        Node current = head;
-        while (current != null) {
-            num = num * 2 + current.value;
-            current = current.next;
-        }
-        return num;
-    }
-```
