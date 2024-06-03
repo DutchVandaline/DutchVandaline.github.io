@@ -61,4 +61,35 @@ DLL get is little bit different from SLL get. Due to SLL has only one pointer wh
 	    return temp;
 	}
 ```
+<br>
+
+# DLL: Insert
+
+## My Solution
+
+DLL Insert has the same formation of SLL Insert. I've missed the `if(... || index > length)`. I've written `if(...|| index >= length)`. 
+
+```java
+   public boolean insert(int index, int value){
+	    Node newNode = new Node(value);
+	    if(index < 0 || index > length) return false;
+	    if(index == 0){
+	        prepend(value);
+	        return true;
+	    }
+	    if(index == length){
+	        append(value);
+	        return true;
+	    } 
+	    Node before = get(index -1);
+	    Node after = before.next;
+	    newNode.prev = before;
+	    newNode.next = after;
+	    before.next = newNode;
+	    after.prev = newNode;
+	    length++;
+	    return true;
+	    
+	}
+```
 
