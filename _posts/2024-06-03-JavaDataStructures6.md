@@ -8,6 +8,7 @@ title:  "Java Data Structure #6"
 
 # What I've Learned
 **First**, I can use two `if` statements handling the edge cases.
+**Second**, don't forget `length++` in prepend. Also, use `head = newNode`.
 
 ## Disclaimer
  For LeetCode, I started learning about data structures on Udemy. I've been studying with lecture named *Java Data Structures & Algorithms + LEETCODE Exercises*. 
