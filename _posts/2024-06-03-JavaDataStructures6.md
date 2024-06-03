@@ -10,6 +10,7 @@ title:  "Java Data Structure #6"
 **First**, I can use two `if` statements handling the edge cases.
 **Second**, don't forget `length++` in prepend. Also, use `head = newNode`.
 **Third**, in DLL get, cut in half and find the index. It's more efficient than SLL.
+**Fourth**, remove can be done by using `temp.next.prev = temp.prev` and `temp.prev.next = temp.next`. Not using two different pointers.
 
 ## Disclaimer
  For LeetCode, I started learning about data structures on Udemy. I've been studying with lecture named *Java Data Structures & Algorithms + LEETCODE Exercises*. 
@@ -90,6 +91,30 @@ DLL Insert has the same formation of SLL Insert. I've missed the `if(... || inde
 	    length++;
 	    return true;
 	    
+	}
+```
+
+# DLL: Remove
+
+## My Solution
+
+![image](https://github.com/DutchVandaline/DutchVandaline.github.io/assets/142364450/a1d8810c-c8bf-469f-b0a1-a38f94184749)
+
+Here is a astonishing idea. Without using `after` and `before` pointer, I can remove the Node using only one pointer. `temp.next.prev = temp.prev` and `temp.prev.next = temp.next`. This is a great idea. Of course it is not that readable.
+
+```java
+   public Node remove(int index){
+	    Node temp = get(index);
+	    if(index < 0 || index >= length) return null;
+	    if(index == 0) return removeFirst();
+	    if(index == length -1) return removeLast();
+	    
+	    temp.next.prev = temp.prev;
+	    temp.prev.next = temp.next;
+	    temp.next = null;
+	    temp.prev = null;
+	    length--;
+	    return temp;
 	}
 ```
 
