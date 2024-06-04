@@ -38,7 +38,7 @@ title:  "Java Data Structure #6"
 	    return temp;
 	}
 ```
-
+<br>
 # DLL: Get
 
 ## My Solution
