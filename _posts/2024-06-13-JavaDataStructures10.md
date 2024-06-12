@@ -20,3 +20,13 @@ title:  "Java Data Structure #10"
     }
 ```
 <br>
+
+# Stack: Pop for a Stack That Uses an ArrayList
+
+```java
+   public T pop(){
+        if(isEmpty()) return null;
+        return stackList.remove(stackList.size()-1);
+    }
+```
+<br>
