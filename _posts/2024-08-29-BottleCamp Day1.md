@@ -2,8 +2,7 @@
 layout: single
 title:  "Bottle Camp Day1"
 ---
-![nasa-aV1jRpSa-RI-unsplash](https://github.com/user-attachments/assets/ea7e61c1-ff12-45b7-9339-ae0fb5ab7a7c)
-
+![BottleCamp](https://github.com/user-attachments/assets/e71a9522-6e8b-4b35-95d9-3b763d426f93)
 # To Start With
 This is a new project for me and my crew, "A-have". 'Pequod' was the official first project for our team but, I've made every backend server and frontend flutter app also, design by myself. Due to my selfishness, There was no chance for my team mates to join. I've learned a lot from 'Pequod', especially team work. Now, I am recording every progress, development and ideas with my team and those who are watching us.
 <br>
@@ -18,8 +17,6 @@ The biggist problem was that there isn't any free map api for coffee shops. I've
 <br>
 
 ## Progress
-![BottleCamp](https://github.com/user-attachments/assets/e71a9522-6e8b-4b35-95d9-3b763d426f93)
-
 **1. Simple frame of the app.** <br>
 **2. Used warm color and placeholder** <br>
 I've made the basic frame of the app. There are three screens, *Map screen*, *Home Screen* and *Settings Screen*. It's filled of placeholder for now on. Also, I've used Pequod's theme for the basics. It can be change anytime. Additionally, I've changed the icon size of the bottom navigation bar.
