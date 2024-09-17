@@ -18,7 +18,7 @@ The biggist problem was that there isn't any free map api for coffee shops. I've
 <br>
 
 ## Progress
-![BottleCamp](https://github.com/user-attachments/assets/f447d9ef-0f3a-41bd-bcdc-cc04d5716402)
+![BottleCamp](https://github.com/user-attachments/assets/e71a9522-6e8b-4b35-95d9-3b763d426f93)
 
 **1. Simple frame of the app.** <br>
 **2. Used warm color and placeholder** <br>
