@@ -2,7 +2,6 @@
 layout: single
 title:  "Bottle Camp Day1"
 ---
-<br>
 ![nasa-aV1jRpSa-RI-unsplash](https://github.com/user-attachments/assets/ea7e61c1-ff12-45b7-9339-ae0fb5ab7a7c)
 
 # To Start With
@@ -19,6 +18,8 @@ The biggist problem was that there isn't any free map api for coffee shops. I've
 <br>
 
 ## Progress
+![BottleCamp](https://github.com/user-attachments/assets/f447d9ef-0f3a-41bd-bcdc-cc04d5716402)
+
 **1. Simple frame of the app.** <br>
 **2. Used warm color and placeholder** <br>
 I've made the basic frame of the app. There are three screens, *Map screen*, *Home Screen* and *Settings Screen*. It's filled of placeholder for now on. Also, I've used Pequod's theme for the basics. It can be change anytime. Additionally, I've changed the icon size of the bottom navigation bar.
