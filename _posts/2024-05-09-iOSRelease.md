@@ -1,6 +1,8 @@
 ---
 layout: single
 title:  "iOS Release"
+categories:
+  - Others
 ---
 <br>
 
