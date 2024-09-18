@@ -13,11 +13,11 @@ main:
 sidebar-category:
   - title: "Category"
     children:
-      - title: "Artificial Intelligence"
+      - title: "Artificial_Intelligence"
         url: "/AI"
       - title: "LeetCode"
         url:  "/LeetCode"
-      - title: "App Development"
-        url:  "/App Development"
-      - title: "Other Projects"
-        url:  "/Other Projects"  
+      - title: "App_Development"
+        url:  "/App"
+      - title: "Other_Projects"
+        url:  "/Others"  
