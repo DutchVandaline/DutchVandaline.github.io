@@ -1,6 +1,8 @@
 ---
 layout: single
 title:  "Bottle Camp Day1"
+categories:
+  - App
 ---
 ![BottleCamp](https://github.com/user-attachments/assets/e71a9522-6e8b-4b35-95d9-3b763d426f93)
 # To Start With
