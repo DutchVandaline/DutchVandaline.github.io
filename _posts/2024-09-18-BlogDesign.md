@@ -5,9 +5,7 @@ categories:
   - Others
 ---
 <br>
-https://x2info.github.io/minimal-mistakes/카테고리_만들기/
-<br>
-I wanted to change the category of my tech blog but I didn't know how. I've looked up for modifying design on minimal mistakes through the keyword of 'minimal mistakes 사이드바'. The upper url is the site which I've followed.
+I wanted to change the category of my tech blog but I didn't know how. I've looked up for modifying design on minimal mistakes through the keyword of 'minimal mistakes 사이드바'. The bottom url is the site which I've followed.
 <br>
 # Steps
 ## 1. /_data/navigation.yml
@@ -85,3 +83,4 @@ defaults:
         nav: "sidebar-category" # Added
 ```
 
+https://x2info.github.io/minimal-mistakes/카테고리_만들기/
