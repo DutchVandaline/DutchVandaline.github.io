@@ -4,6 +4,7 @@ title:  "Bottle Camp Day1"
 categories:
   - App
 ---
+<br>
 ![BottleCamp](https://github.com/user-attachments/assets/e71a9522-6e8b-4b35-95d9-3b763d426f93)
 # To Start With
 This is a new project for me and my crew, "A-have". 'Pequod' was the official first project for our team but, I've made every backend server and frontend flutter app also, design by myself. Due to my selfishness, There was no chance for my team mates to join. I've learned a lot from 'Pequod', especially team work. Now, I am recording every progress, development and ideas with my team and those who are watching us.
