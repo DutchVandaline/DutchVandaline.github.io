@@ -1,6 +1,8 @@
 ---
 layout: single
 title:  "Java Data Structure #8"
+categories:
+  - LeetCode
 ---
 <br>
 
