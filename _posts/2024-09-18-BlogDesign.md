@@ -58,9 +58,9 @@ layout: archive
 permalink: /Others
 ---
 
-
 {% assign posts = site.categories.Others %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
+
 ```
 
 ## 4. Modify _config.yml
