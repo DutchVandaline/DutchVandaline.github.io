@@ -1,9 +1,0 @@
----
-title: "Artificial_Intelligence"
-layout: archive
-permalink: /Artificial_Intelligence
----
-
-
-{% assign posts = site.categories.Artificial_Intelligence %}
-{% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
