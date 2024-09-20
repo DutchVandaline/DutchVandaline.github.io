@@ -1,13 +1,21 @@
 ---
 layout: single
-title:  "Let's"
+title:  "Let's make YOLO! Part 1"
 categories:
-  - App
+  - AI
 ---
+
 <br>
-![BottleCamp](https://github.com/user-attachments/assets/e71a9522-6e8b-4b35-95d9-3b763d426f93)
+![image](https://github.com/user-attachments/assets/82996407-f731-461a-935e-3027f39e700f)
+
 # To Start With
-This is a new project for me and my crew, "A-have". 'Pequod' was the official first project for our team but, I've made every backend server and frontend flutter app also, design by myself. Due to my selfishness, There was no chance for my team mates to join. I've learned a lot from 'Pequod', especially team work. Now, I am recording every progress, development and ideas with my team and those who are watching us.
+Building RayCaster game using C or making bunch of apps and deploying on AppStore were just to improve my coding skills. I had a dream for making an Artificial Intelligence model. Of course I don't know well about Artificial Intelligence also, I'm not that fluent using PyTorch, too. I think it is necessary to hit the wall or dig some place wrong to build my skills. So, I have a challenge for myself. Before that, following is my skill that I can do with PyTorch: <br>
+* Can build CNN(Convolutional Neural Network) using PyTorch.
+* Can build TinyVGG using PyTorch.
+* Can handle datasets and make dataloaders to train and test.
+<br>
+The reason why instructors or professors begin with Computer Vision problem for teaching how to write code on Artificial Intelligence is that Computer Vision Problem is visual, straight forward and easy to understand. CNN and TinyVGG is the basic of the Computer Vision and I understand it. Now, I wanted to build a SOTA(State-of-the-art) model on Computer Vision field by myself. A YOLO.
+
 <br>
 
 # Thoughts
