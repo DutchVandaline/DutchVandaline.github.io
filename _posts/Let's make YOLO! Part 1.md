@@ -19,9 +19,11 @@ The reason why instructors or professors begin with Computer Vision problem for 
 
 # Finding Recommendations
 ## YOLO Architectures
+Looked up for papers about YOLO, found some blog posts about YOLO Architectures. But the base architecture I've followed was the image in YOLO paper. It seems simple, showing the starting image size of 448,448 using Convolutional Layers.
+![image](https://github.com/user-attachments/assets/ed55c98e-ef96-45e6-9488-5409262cd48e)
 
 ## Datasets
-
+Shout out to mrdbourke! I am using `pizza-steak-sushi` datasets which mrdbourke made. It's basically Food101 set. It has 225 training set, 75 testing sets. I thought it would be fine... I thought...
 <br>
 
 # Model
