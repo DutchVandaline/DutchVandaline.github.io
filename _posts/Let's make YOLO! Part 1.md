@@ -6,7 +6,8 @@ categories:
 ---
 
 <br>
-![image](https://github.com/user-attachments/assets/82996407-f731-461a-935e-3027f39e700f)
+![image](https://github.com/user-attachments/assets/ff9c27b0-936b-4913-ad9d-910e3427699b)
+
 
 # To Start With
 Building RayCaster game using C or making bunch of apps and deploying on AppStore were just to improve my coding skills. I had a dream for making an Artificial Intelligence model. Of course I don't know well about Artificial Intelligence also, I'm not that fluent using PyTorch, too. I think it is necessary to hit the wall or dig some place wrong to build my skills. So, I have a challenge for myself. Before that, following is my skill that I can do with PyTorch: <br>
