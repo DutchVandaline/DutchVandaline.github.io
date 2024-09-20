@@ -15,17 +15,147 @@ Building RayCaster game using C or making bunch of apps and deploying on AppStor
 * Can handle datasets and make dataloaders to train and test.
 <br>
 The reason why instructors or professors begin with Computer Vision problem for teaching how to write code on Artificial Intelligence is that Computer Vision Problem is visual, straight forward and easy to understand. CNN and TinyVGG is the basic of the Computer Vision and I understand it. Now, I wanted to build a SOTA(State-of-the-art) model on Computer Vision field by myself. A YOLO.
+<br>
+
+# Finding Recommendations
+## YOLO Architectures
+
+## Datasets
 
 <br>
 
-# Thoughts
-Idea was simple. Pequod was for every people who were interested in environment. I admit. It was broad, not convincing, ideal. The biggest problem was the target consumers. Pequod is for people who are environmental. It's too broad. So, The first thing we've done is narrowing down the target. We've set for those who have reusable bottle(tumbler) but not using.
+# Model
+
+```
+from torch import nn
+
+class YOLOV1(nn.Module):
+  def __init__(self, input_shape: int,
+               hidden_units: int,
+               output_shape: int):
+    super().__init__()
+    self.block_1 = nn.Sequential(
+        nn.Conv2d(in_channels=input_shape,out_channels=hidden_units,kernel_size= 7,stride=2,padding=3),
+        nn.LeakyReLU(),
+        nn.MaxPool2d(kernel_size=2,stride=2)
+    )
+
+    self.block_2 = nn.Sequential(
+        nn.Conv2d(in_channels = hidden_units,out_channels = hidden_units,kernel_size = 3,padding=1),
+        nn.LeakyReLU(),
+        nn.MaxPool2d(kernel_size=2,stride=2),
+    )
+
+    self.block_3 = nn.Sequential(
+        nn.Conv2d(in_channels = hidden_units,out_channels = 128,kernel_size = 1,padding = 0),
+        nn.LeakyReLU(),
+        nn.Conv2d(in_channels = 128,out_channels = 256,kernel_size = 3,padding = 1,),
+        nn.LeakyReLU(),
+        nn.Conv2d(in_channels=256,out_channels = 256,kernel_size = 1,padding = 0),
+        nn.LeakyReLU(),
+        nn.Conv2d(in_channels=256,out_channels=512,kernel_size = 3,padding = 1),
+        nn.LeakyReLU(),
+        nn.MaxPool2d(kernel_size =2,stride = 2)
+    )
+
+    self.block_4 = nn.Sequential(
+        nn.Conv2d(in_channels=512,out_channels=256,kernel_size = 1,padding = 0),
+        nn.LeakyReLU(),
+        nn.Conv2d(in_channels=256,out_channels=512,kernel_size = 3,padding = 1),
+        nn.LeakyReLU(),
+
+        nn.Conv2d(in_channels=512,out_channels=256,kernel_size = 1,padding = 0),
+        nn.LeakyReLU(),
+        nn.Conv2d(in_channels=256,out_channels=512,kernel_size = 3,padding = 1),
+        nn.LeakyReLU(),
+
+        nn.Conv2d(in_channels=512,out_channels=256,kernel_size = 1,padding = 0),
+        nn.LeakyReLU(),
+        nn.Conv2d(in_channels=256,out_channels=512,kernel_size = 3,padding = 1),
+        nn.LeakyReLU(),
+
+        nn.Conv2d(in_channels=512,out_channels=256,kernel_size = 1,padding = 0),
+        nn.LeakyReLU(),
+        nn.Conv2d(in_channels=256,out_channels=512,kernel_size = 3,padding = 1),
+        nn.LeakyReLU(),
+
+        nn.Conv2d(in_channels=512,out_channels=512,kernel_size = 1, padding = 0),
+        nn.LeakyReLU(),
+
+        nn.Conv2d(in_channels=512,out_channels=1024,kernel_size = 3,padding = 1),
+        nn.LeakyReLU(),
+        nn.MaxPool2d(kernel_size =2,stride = 2)
+    )
+
+    self.block_5 = nn.Sequential(
+      nn.Conv2d(in_channels=1024, out_channels=512, kernel_size=1, padding=0),
+      nn.LeakyReLU(),
+      nn.Conv2d(in_channels=512, out_channels=1024, kernel_size=3, padding=1),
+      nn.LeakyReLU(),
+
+      nn.Conv2d(in_channels=1024, out_channels=512, kernel_size=1, padding=0),
+      nn.LeakyReLU(),
+      nn.Conv2d(in_channels=512, out_channels=1024, kernel_size=3, padding=1),
+      nn.LeakyReLU(),
+
+      nn.Conv2d(in_channels=1024, out_channels=1024, kernel_size=3, padding=1),
+      nn.LeakyReLU(),
+
+      nn.Conv2d(in_channels=1024, out_channels=1024, kernel_size=3, padding=1, stride=2),
+      nn.LeakyReLU(),
+  )
+    self.block_6 = nn.Sequential(
+        nn.Conv2d(in_channels=1024, out_channels=1024, kernel_size=3, padding=0,),
+        nn.LeakyReLU(),
+        nn.Conv2d(in_channels=1024, out_channels=1024, kernel_size=3, padding=1,),
+        nn.LeakyReLU(),
+    )
+
+    self.flatten = nn.Flatten()
+
+    self.block_7 = nn.Linear(in_features=1024 * 5 * 5, out_features=4096)
+
+    self.block_8 = nn.Linear(in_features=4096, out_features=output_shape)
+
+
+  def forward(self, x:torch.Tensor):
+    x = self.block_1(x)
+    x = self.block_2(x)
+    x = self.block_3(x)
+    x = self.block_4(x)
+    x = self.block_5(x)
+    x = self.block_6(x) 
+
+    x = self.flatten(x)
+
+    x = self.block_7(x)
+    x = self.block_8(x)
+
+    return x
+
+
+```
 <br>
 
-# Development
-## Problem
-The biggist problem was that there isn't any free map api for coffee shops. I've looked up for Google map, Korean Statistic open map api. But nothing was available. For my first thought, I wanted to target to global tumbler users, but *first, we need to narrow it down* and *second, there is no map api*, chose to target Korean users.
-<br>
+# Results
+```
+100%
+ 3/3 [02:44<00:00, 55.18s/it]
+Epoch: 0
+-----
+Train loss : 152132862049970552832.00000 | Train acc :  29.69%
+Test loss: 12687692382930468864.00000 | Test acc: 26.04% 
+
+Epoch: 1
+-----
+Train loss : 4341873112951807803392.00000 | Train acc :  28.91%
+Test loss: 7534591419435110629376.00000 | Test acc: 54.17% 
+
+Epoch: 2
+-----
+Train loss : 1530760424756814544896.00000 | Train acc :  38.28%
+Test loss: 230886366355576389107712.00000 | Test acc: 26.04% 
+```
 
 ## Progress
 **1. Simple frame of the app.** <br>
