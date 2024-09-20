@@ -27,7 +27,7 @@ Shout out to mrdbourke! I am using `pizza-steak-sushi` datasets which mrdbourke 
 <br>
 
 # Model
-
+Hard part was matching the padding and stride size. I've calculated to match the size of tensor. Block 7 and Block 8 was hard to match the size.
 ```
 from torch import nn
 
@@ -140,6 +140,7 @@ class YOLOV1(nn.Module):
 <br>
 
 # Results
+I was glad for model running but the problem is crystal clear. Loss is too big. Accuracy is not the problem. Loss is way too big. I think the problem is the size of training and testing set. Total 300 images are not enough. I have to increase it more. Let's see the loss changes. 
 ```
 100%
  3/3 [02:44<00:00, 55.18s/it]
@@ -158,15 +159,11 @@ Epoch: 2
 Train loss : 1530760424756814544896.00000 | Train acc :  38.28%
 Test loss: 230886366355576389107712.00000 | Test acc: 26.04% 
 ```
-
-## Progress
-**1. Simple frame of the app.** <br>
-**2. Used warm color and placeholder** <br>
-I've made the basic frame of the app. There are three screens, *Map screen*, *Home Screen* and *Settings Screen*. It's filled of placeholder for now on. Also, I've used Pequod's theme for the basics. It can be change anytime. Additionally, I've changed the icon size of the bottom navigation bar.
 <br>
 
-# Branding
-I want to make a brand out of this. There will be further notice when progress is made.
-
+## Progress
+**1. Model worked, it means a lot to me.** <br>
+**2. Problem is the size of training, testing image, I guess.** <br>
+<br>
 
 
