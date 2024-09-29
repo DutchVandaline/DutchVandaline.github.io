@@ -28,7 +28,8 @@ Shout out to mrdbourke! I am using `pizza-steak-sushi` datasets which mrdbourke 
 <br>
 
 # Update
-So, I thought the problem was about lack of training and testing sets but, it wasnt'. I wasn't able to solve the problem so I looked up the paper and found that YOLO has it's own Loss Function. I've been struggling with using CrossEntropyLoss. Following is the image of the Loss function in YOLO paper.
+So, I thought the problem was about lack of training and testing sets but, it wasnt'. I wasn't able to solve the problem so I looked up the paper and found that YOLO has it's own Loss Function. I've been struggling with using CrossEntropyLoss. Following is the image of the Loss function in YOLO paper. <br>
+
 <img width="707" alt="스크린샷 2024-09-29 오후 9 22 23" src="https://github.com/user-attachments/assets/be244047-3ac9-40ce-b6c5-e3e8cd8f11ac">
 
 ```
