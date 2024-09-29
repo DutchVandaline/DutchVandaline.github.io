@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/449861c7-6ae0-4247-a240-f55f7c30a377)---
+---
 layout: single
 title:  "Let's make YOLO! Part 2"
 categories:
