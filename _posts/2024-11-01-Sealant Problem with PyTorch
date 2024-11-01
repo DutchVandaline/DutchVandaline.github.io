@@ -27,7 +27,12 @@ Also, I've considered EfficientNet, CNN, VGG and so on...
 # Results
 ## Transfer Learning with ViT
 I thought "Why just I give it a shot?" and just did it. Result was astonishing. 
-
+![download](https://github.com/user-attachments/assets/7b0f5022-3624-41e7-8ab9-2147e276ba1a)
+<br>
+![download](https://github.com/user-attachments/assets/c18bf718-d245-442a-83a1-95441a494acf)
+<br>
+ROC curve is not like what I've learned. When zero, it needs to be zero and graph looks like going up. But, the ROC curve that I've got? It's perfectly 1. How?
+At first, I thought it's just perfectly checking. And that thought was wrong. 
 
 
 <br>
