@@ -27,8 +27,10 @@ Also, I've considered EfficientNet, CNN, VGG and so on...
 # Results, I guess?
 ## Transfer Learning with ViT
 I thought "Why just I give it a shot?" and just did it. Result was astonishing. 
-<img src="https://github.com/user-attachments/assets/7b0f5022-3624-41e7-8ab9-2147e276ba1a" width="300" height="300">
-<img src="https://github.com/user-attachments/assets/c18bf718-d245-442a-83a1-95441a494acf" width="300" height="300">
+<div style="display: flex; gap: 10px;">
+    <img src="https://github.com/user-attachments/assets/7b0f5022-3624-41e7-8ab9-2147e276ba1a" width="300" height="300">
+    <img src="https://github.com/user-attachments/assets/c18bf718-d245-442a-83a1-95441a494acf" width="300" height="300">
+</div>
 <br>
 ROC curve is not like what I've learned. When zero, it needs to be zero and graph looks like going up. But, the ROC curve that I've got? It's perfectly 1. How? <br>
 At first, I thought it's just perfectly checking. And that thought was wrong. (Actually, ROC Curve doesn't always need to start with (0,0). It's about FPR and TPR so if FPR is zero, then it can start at the top of the graph.) <br>
