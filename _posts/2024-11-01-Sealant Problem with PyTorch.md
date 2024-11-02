@@ -24,21 +24,33 @@ I thought I can just use transfer learning to train the model and test it by jus
 Also, I've considered EfficientNet, CNN, VGG and so on...
 
 
-# Results
+# Results, I guess?
 ## Transfer Learning with ViT
 I thought "Why just I give it a shot?" and just did it. Result was astonishing. 
-![download](https://github.com/user-attachments/assets/7b0f5022-3624-41e7-8ab9-2147e276ba1a)
+<img src="https://github.com/user-attachments/assets/7b0f5022-3624-41e7-8ab9-2147e276ba1a" width="300" height="300">
+<img src="https://github.com/user-attachments/assets/c18bf718-d245-442a-83a1-95441a494acf" width="300" height="300">
 <br>
-![download](https://github.com/user-attachments/assets/c18bf718-d245-442a-83a1-95441a494acf)
-<br>
-ROC curve is not like what I've learned. When zero, it needs to be zero and graph looks like going up. But, the ROC curve that I've got? It's perfectly 1. How?
-At first, I thought it's just perfectly checking. And that thought was wrong. 
+ROC curve is not like what I've learned. When zero, it needs to be zero and graph looks like going up. But, the ROC curve that I've got? It's perfectly 1. How? <br>
+At first, I thought it's just perfectly checking. And that thought was wrong. (Actually, ROC Curve doesn't always need to start with (0,0). It's about FPR and TPR so if FPR is zero, then it can start at the top of the graph.) <br>
+ViT, Vision Transformer must be way to powerful. I need to check if it is really an overfitting. Every other datum says it's not an overfitting but, I cannot really believe the ROC and Confusion Matrix before it is tested on the real environment. I just need to double check. <br> <br>
 
+```python
+from pytorch_modules.pytorch_modules.predictions import pred_and_plot_image
+normal_image = "/content/drive/MyDrive/data/test/defect/20240823_105639.jpg"
 
+pred_and_plot_image(model=ViT,
+                           image_path=normal_image,
+                           class_names=class_names)
+```
 <br>
+I've checked some test data manually, but it wasn't not that correct. Classifing `Defect` was almost perfect, but in the case of `Normal`, not really. I just need to check if it really is Overfitting or just a luck. Next time, I will try EfficientNet. Also, **Data imbalance** can be the problem.<br>
 
 ## Progress
-**1. Found out that YOLO has it's own Loss Function.** <br>
-**2. Modified the Loss Function and made it live between 0 and 1. But not sure whether it's working or not.** <br>
+**1. Tried ViT (Vision Transformer) to check the Accuracy and it was great.** <br>
+**2. There are ROC curves that doesn't start with `(0,0)`** <br>
 <br>
+
+## What's Next?
+**1. Run EfficientNet to check if it is overfitting or not.**
+**2. Data imbalance can be a problem.**
 
