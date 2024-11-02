@@ -53,6 +53,6 @@ I've checked some test data manually, but it wasn't not that correct. Classifing
 <br>
 
 ## What's Next?
-**1. Run EfficientNet to check if it is overfitting or not.**
+**1. Run EfficientNet to check if it is overfitting or not.** <br>
 **2. Data imbalance can be a problem.**
 
