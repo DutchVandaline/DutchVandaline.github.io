@@ -26,7 +26,7 @@ Also, I've considered EfficientNet, CNN, VGG and so on...
 
 # Results, I guess?
 ## Transfer Learning with ViT
-I thought "Why just I give it a shot?" and just did it. Result was astonishing. 
+I thought "Why just I give it a shot?" and the result was astonishing. 
 <div style="display: flex; gap: 10px;">
     <img src="https://github.com/user-attachments/assets/7b0f5022-3624-41e7-8ab9-2147e276ba1a" width="300" height="300">
     <img src="https://github.com/user-attachments/assets/c18bf718-d245-442a-83a1-95441a494acf" width="300" height="300">
