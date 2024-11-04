@@ -19,9 +19,62 @@ There are printing errors on sealant. Accuracy needs to be high and speed needs 
 - Model needs to be light weight.
 
 # Finding Recommendations
-## Transfer Learning
-I thought I can just use transfer learning to train the model and test it by just using it. I've learned Transfer Learning via Udemy, so I knew how to do it. The first model I've tried is ViT, the Vision Transformer. Actually it's the most powerful model now in Computer Vision territory.
-Also, I've considered EfficientNet, CNN, VGG and so on...
+## EfficientNet
+EfficientNet is a Artificial Intelligence model and it has a long history. Layers are deep and wide so that it can learn things well. It's capable for classification. Following is the layer of EfficientNet that can be seen on PyTorch. I've used Transfer Learning as I did at ViT.
+
+```python
+========================================================================================================================
+Layer (type (var_name))                                      Input Shape     Output Shape    Param #         Trainable
+========================================================================================================================
+EfficientNet (EfficientNet)                                  [1, 3, 2532, 824] [1, 2]          --              Partial
+├─Sequential (features)                                      [1, 3, 2532, 824] [1, 1280, 80, 26] --              False
+│    └─Conv2dNormActivation (0)                              [1, 3, 2532, 824] [1, 32, 1266, 412] --              False
+│    │    └─Conv2d (0)                                       [1, 3, 2532, 824] [1, 32, 1266, 412] (864)           False
+│    │    └─BatchNorm2d (1)                                  [1, 32, 1266, 412] [1, 32, 1266, 412] (64)            False
+│    │    └─SiLU (2)                                         [1, 32, 1266, 412] [1, 32, 1266, 412] --              --
+│    └─Sequential (1)                                        [1, 32, 1266, 412] [1, 16, 1266, 412] --              False
+│    │    └─MBConv (0)                                       [1, 32, 1266, 412] [1, 16, 1266, 412] (1,448)         False
+│    └─Sequential (2)                                        [1, 16, 1266, 412] [1, 24, 633, 206] --              False
+│    │    └─MBConv (0)                                       [1, 16, 1266, 412] [1, 24, 633, 206] (6,004)         False
+│    │    └─MBConv (1)                                       [1, 24, 633, 206] [1, 24, 633, 206] (10,710)        False
+│    └─Sequential (3)                                        [1, 24, 633, 206] [1, 40, 317, 103] --              False
+│    │    └─MBConv (0)                                       [1, 24, 633, 206] [1, 40, 317, 103] (15,350)        False
+│    │    └─MBConv (1)                                       [1, 40, 317, 103] [1, 40, 317, 103] (31,290)        False
+│    └─Sequential (4)                                        [1, 40, 317, 103] [1, 80, 159, 52] --              False
+│    │    └─MBConv (0)                                       [1, 40, 317, 103] [1, 80, 159, 52] (37,130)        False
+│    │    └─MBConv (1)                                       [1, 80, 159, 52] [1, 80, 159, 52] (102,900)       False
+│    │    └─MBConv (2)                                       [1, 80, 159, 52] [1, 80, 159, 52] (102,900)       False
+│    └─Sequential (5)                                        [1, 80, 159, 52] [1, 112, 159, 52] --              False
+│    │    └─MBConv (0)                                       [1, 80, 159, 52] [1, 112, 159, 52] (126,004)       False
+│    │    └─MBConv (1)                                       [1, 112, 159, 52] [1, 112, 159, 52] (208,572)       False
+│    │    └─MBConv (2)                                       [1, 112, 159, 52] [1, 112, 159, 52] (208,572)       False
+│    └─Sequential (6)                                        [1, 112, 159, 52] [1, 192, 80, 26] --              False
+│    │    └─MBConv (0)                                       [1, 112, 159, 52] [1, 192, 80, 26] (262,492)       False
+│    │    └─MBConv (1)                                       [1, 192, 80, 26] [1, 192, 80, 26] (587,952)       False
+│    │    └─MBConv (2)                                       [1, 192, 80, 26] [1, 192, 80, 26] (587,952)       False
+│    │    └─MBConv (3)                                       [1, 192, 80, 26] [1, 192, 80, 26] (587,952)       False
+│    └─Sequential (7)                                        [1, 192, 80, 26] [1, 320, 80, 26] --              False
+│    │    └─MBConv (0)                                       [1, 192, 80, 26] [1, 320, 80, 26] (717,232)       False
+│    └─Conv2dNormActivation (8)                              [1, 320, 80, 26] [1, 1280, 80, 26] --              False
+│    │    └─Conv2d (0)                                       [1, 320, 80, 26] [1, 1280, 80, 26] (409,600)       False
+│    │    └─BatchNorm2d (1)                                  [1, 1280, 80, 26] [1, 1280, 80, 26] (2,560)         False
+│    │    └─SiLU (2)                                         [1, 1280, 80, 26] [1, 1280, 80, 26] --              --
+├─AdaptiveAvgPool2d (avgpool)                                [1, 1280, 80, 26] [1, 1280, 1, 1] --              --
+├─Sequential (classifier)                                    [1, 1280]       [1, 2]          --              True
+│    └─Dropout (0)                                           [1, 1280]       [1, 1280]       --              --
+│    └─Linear (1)                                            [1, 1280]       [1, 2]          2,562           True
+========================================================================================================================
+Total params: 4,010,110
+Trainable params: 2,562
+Non-trainable params: 4,007,548
+Total mult-adds (G): 16.16
+========================================================================================================================
+Input size (MB): 25.04
+Forward/backward pass size (MB): 4505.09
+Params size (MB): 16.04
+Estimated Total Size (MB): 4546.17
+
+```
 
 
 # Results, I guess?
