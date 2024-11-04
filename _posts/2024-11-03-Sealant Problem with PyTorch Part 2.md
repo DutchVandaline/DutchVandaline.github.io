@@ -78,34 +78,30 @@ Estimated Total Size (MB): 4546.17
 
 
 # Results, I guess?
-## Transfer Learning with ViT
-I thought "Why just I give it a shot?" and the result was astonishing. 
-<div style="display: flex; gap: 10px;">
-    <img src="https://github.com/user-attachments/assets/7b0f5022-3624-41e7-8ab9-2147e276ba1a" width="300" height="300">
-    <img src="https://github.com/user-attachments/assets/c18bf718-d245-442a-83a1-95441a494acf" width="300" height="300">
+## Transfer Learning with EfficientNet
+As I did on ViT, I've made EfficientNet learn on imbalance data. Normal dataset has about 221 images and Defect has about 1300. Results are like following
+
+<div style="display: flex; overflow-x: auto; gap: 10px;">
+    <img src="https://github.com/user-attachments/assets/84d7327f-d401-49ec-b5ba-974450f6fe89" width="300" height="300">
+    <img src="https://github.com/user-attachments/assets/a9fe5765-2191-4537-a165-658bbd76101f" width="300" height="300">
 </div>
+
 <br>
-ROC curve is not like what I've learned. When zero, it needs to be zero and graph looks like going up. But, the ROC curve that I've got? It's perfectly 1. How? <br>
+ROC curve is almost similar to what I've got from ViT. When zero, it needs to be zero and graph looks like going up. But, the ROC curve that I've got? It's perfectly 1. How? <br>
 At first, I thought it's just perfectly checking. And that thought was wrong. (Actually, ROC Curve doesn't always need to start with (0,0). It's about FPR and TPR so if FPR is zero, then it can start at the top of the graph.) <br>
-ViT, Vision Transformer must be way to powerful. I need to check if it is really an overfitting. Every other datum says it's not an overfitting but, I cannot really believe the ROC and Confusion Matrix before it is tested on the real environment. I just need to double check. <br> <br>
+ I've thought that ViT, Vision Transformer is powerful when I got that similar curve and ratio. But, I cannot believe the result so, checked if it is really an overfitting. <br>
+ When I got the similar results from EfficientNet, I thought it can be wrong. What can be the problem? <br>
+ What I thought is the imbalance of the `Normal` and `Defect` Images. There are way too much `Defect` images rather than `Normal` Images. Model learns `Defect` data much better and there are less `Normal` data in Test Set too. Then, how can I solve this problem? <br> <br>
 
-```python
-from pytorch_modules.pytorch_modules.predictions import pred_and_plot_image
-normal_image = "/content/drive/MyDrive/data/test/defect/20240823_105639.jpg"
-
-pred_and_plot_image(model=ViT,
-                           image_path=normal_image,
-                           class_names=class_names)
-```
-<br>
-I've checked some test data manually, but it wasn't not that correct. Classifing `Defect` was almost perfect, but in the case of `Normal`, not really. I just need to check if it really is Overfitting or just a luck. Next time, I will try EfficientNet. Also, **Data imbalance** can be the problem.<br>
-
+## UnderSampling and OverSampling
+There are two ways to solve the imbalance of the datasets. One is undersampling which is matching the length of image data on less number. The other is oversampling which is matching the length of image data on biggest number. UnderSampling can use original data but, there can be loss on images. OverSampling however can maintain good learning but, need to augment the data. I am starting with UnderSampling and move to OverSampling.
+ 
 ## Progress
-**1. Tried ViT (Vision Transformer) to check the Accuracy and it was great.** <br>
+**1. Tried EfficientNet to check the Accuracy and it was great.** <br>
 **2. There are ROC curves that doesn't start with `(0,0)`** <br>
 <br>
 
 ## What's Next?
-**1. Run EfficientNet to check if it is overfitting or not.** <br>
+**1. Do the UnderSampling and check the ROC Curve.** <br>
 **2. Data imbalance can be a problem.**
 
