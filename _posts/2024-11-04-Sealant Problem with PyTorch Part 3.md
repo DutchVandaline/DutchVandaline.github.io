@@ -20,12 +20,20 @@ There are printing errors on sealant. Accuracy needs to be high and speed needs 
 
 # Finding Recommendations
 ## UnderSampling and OverSampling
+ UnderSampling is sampling the images less than given images due to the imbalance of test and training image. For example, if there are 300 normal image but 1000 defect image, we 'undersample' the test image to 300. In this way, model can learn in balanced way. <br>
+  OverSampling is the opposite. It's making 300 normal images into 1000 normal images. But, how? There are several ways to do this. You can use `SMOTE` in case of text datum. It generates new text data based on the other original data. But we are handling with images.
 
+## Data Augmentation
+ Data augmentation is the answer. You can augment the image by cropping, exaggerating, giving filters like gausian filter, bluring, edge detecting... sort of ways. I also thougt of generating new images using GAN, but the image was way too big to train and generate the augmented image. So, I am using data augmentation for Oversampling.
 
 
 # Results, I guess?
-## UnderSampling with ViT
-As I did on ViT, I've made EfficientNet learn on imbalance data. Normal dataset has about 221 images and Defect has about 1300. Results are like following
+## OverSampling using Data Augmentation
+ Following is the code for augmenting images on jupyter notebook. I've used slight of image augmentation because, the image I need to classify has a detail. I need to check if it has printing error, or color errors. So, I wasn't able to use grey scaling and cropping at the middle of the image. <br>
+ Also, I've extracted 20 `normal` and 20 `defect` images from start to test it at the final level.
+
+ 
+
 
 <div style="display: flex; overflow-x: auto; gap: 10px;">
     <img src="https://github.com/user-attachments/assets/84d7327f-d401-49ec-b5ba-974450f6fe89" width="300" height="300">
