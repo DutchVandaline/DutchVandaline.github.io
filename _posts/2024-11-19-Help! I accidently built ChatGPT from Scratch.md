@@ -10,19 +10,20 @@ categories:
 
 
 # To Start With
- I am a student learning Artificial Intelligence. I was doing some tests, creating stuff using PyTorch and Jupyter Notebook and accidentally made ChatGPT from Scratch.
- **Consraints**
-- Can use only Google Colab Resources.
-- Model needs to be fast, accurate at the same time.
-- Model needs to be light weight.
+ I am a student learning Artificial Intelligence. I was doing some tests, creating stuff using PyTorch and Jupyter Notebook and accidentally made ChatGPT from Scratch. The initial was my personal study making a Classifier model and I got some urge to make ChatGPT. And yeah. It worked. These were what I can do.
+ - I was able to make  `ViT`(Vision Transformer) from Scratch.
+ - I was able to make `Encoder block` in `ViT`.
 
 # Finding Recommendations
-## UnderSampling and OverSampling
- UnderSampling is sampling the images less than given images due to the imbalance of test and training image. For example, if there are 300 normal image but 1000 defect image, we 'undersample' the test image to 300. In this way, model can learn in balanced way. <br>
-  OverSampling is the opposite. It's making 300 normal images into 1000 normal images. But, how? There are several ways to do this. You can use `SMOTE` in case of text datum. It generates new text data based on the other original data. But we are handling with images.
+The biggest Recommendation was `Attention is all you need` and `GPT2` paper. I didn't know how to make decoder block but, I checked the `Attention is all you need` paper so that i can make decoder block. I will make a further notice about that section later on.
 
-## Data Augmentation
- Data augmentation is the answer. You can augment the image by cropping, exaggerating, giving filters like gausian filter, bluring, edge detecting... sort of ways. I also thougt of generating new images using GAN, but the image was way too big to train and generate the augmented image. So, I am using data augmentation for Oversampling.
+# Ways to go
+![image](https://github.com/user-attachments/assets/95ee6a93-2409-4a2f-9231-6602c8124986)
+<br>
+Bert is a stack of Encoder Layer and GPT is a stack of Decoder layer. I knew how to make Encoder layer using Multihead-SelfAttention Layer and MultiLayer Perceptron but, not about Decoder layer. When I saw that image from `Attention is all you need`, I had a instinct that I can make the decoder layer. One thing added was Masked Multihead-SelfAttention layer. Before, let's talk about Tokenization and Preprocessing.<br>
+
+## Tokenization
+Tokenization is crutial for the LLM. LLM, a large language model doesn't actually *read* or *understand* the context of sentences. Humans read the line just by looking at the sentence level. Actually, human don't look all the words inside the sentence. **You assume what inner word will be.** On the other hand, computers looks at the words. You can learn by Computer Vision sector for example making CNN or ViT. AI model breaks image into smaller patch of images and analyzes the RGB value. In the same way, sentence needs to be patched, we call it tokenization.
 
 
 # Results, I guess?
